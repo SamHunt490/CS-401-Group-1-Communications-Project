@@ -1,0 +1,10 @@
+Self1,Other1,7.22.2022,0,BLAH1
+Self2,Other2,7.22.2022,0,BLAH2
+Self3,Other3,7.22.2022,0,BLAH3
+Self1,Other1,7.22.2022,0,BLAH1
+Self2,Other2,7.22.2022,0,BLAH2
+Self3,Other3,7.22.2022,0,BLAH3
+Me,They,7.24.2022,0,This Wall Of Text
+Me,They,7.24.2022,0,This Wall Of Text
+Self6,Other6,7.22.2022,0,BLAH3
+Self6,Other6,7.22.2022,0,BLAH3
