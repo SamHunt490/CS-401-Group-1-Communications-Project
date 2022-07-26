@@ -37,7 +37,6 @@ public class User implements Serializable {
 	public void SetPass(String Password) {
 		this.Pass = Password;
 	}
-	
 	// Integer IT Determines Whether User Is IT Role
 	// 0 = False
 	// 1 = True
@@ -70,10 +69,15 @@ public class User implements Serializable {
 			return;
 		}
 	}
-	public void CreateGroup(String GroupName) {
-		// TODO NEED GROUP CLASSES 
-		//	ADD TO GROUP TXT
-		//
+	public Vector<String> CreateGroup(String GroupName) {
+		GroupList Temp = new GroupList();
+		Temp.SetGroupName(GroupName);
+		System.out.println(Temp.GetFileName());
+		System.out.println(Temp.GetGroupName());
+		Temp.LoadGroup();	
+		System.out.println(Temp.GetGroup());
+		return Temp.GetGroup();
+		
 	}
 	public void SendMessage(Message Msg) {
 		MessageLog TempLog = new MessageLog();
@@ -81,7 +85,6 @@ public class User implements Serializable {
 		TempLog.SaveMsgLog();
 	}
 	public Vector<Message> displayMessage(String Other){
-		Vector<Message> Temp = new Vector<Message>();
 		MessageLog TempLog = new MessageLog();
 		TempLog.LoadMsgFile();
 		return TempLog.SearchMsgLog(this.Id, Other);
