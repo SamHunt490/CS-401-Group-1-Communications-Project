@@ -1,7 +1,7 @@
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-public class Message {
+public class Message implements Serializable {
 	private String Sender;
 	private String Reciever;
 	private String Content;
