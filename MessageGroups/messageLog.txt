@@ -8,3 +8,6 @@ Me,They,7.24.2022,0,This Wall Of Text
 Me,They,7.24.2022,0,This Wall Of Text
 Self6,Other6,7.22.2022,0,BLAH3
 Self6,Other6,7.22.2022,0,BLAH3
+
+
+// Example messageLog Txt file
