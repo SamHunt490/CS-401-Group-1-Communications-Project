@@ -67,8 +67,6 @@ public class UserVerify {
 			String Name, Id, Password, IsIT; 
 			Integer ISIT;
 			User Temp = null;
-			// Since Only TxtMessage Types Are Stored
-			MessageType Type = MessageType.TEXTMESSAGE;
 			while(sc.hasNext()) {
 				Name = sc.next();
 				Id = sc.next();
