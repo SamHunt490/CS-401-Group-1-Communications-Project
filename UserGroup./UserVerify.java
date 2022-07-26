@@ -1,5 +1,4 @@
 import java.io.*;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class UserVerify {
@@ -24,23 +23,24 @@ public class UserVerify {
 		UserLog.add(New);
 		SaveUserFile();
 	}
-	public Boolean SearchUser(User Login) {
-		for( User Iter : this.UserLog) {
+	public User SearchUser(User Login) {
+		for( User Iter : UserLog) {
 			if(Iter.GetId().equals(Login.GetId())) {
 				if(Iter.GetPass().equals(Login.GetPass())) {
 					// If True Then Login ID AND PASS ARE VALID
-					return true;
+					
+					return Iter;
 				}
 			}
 		}
 		// USER DOES NOT EXIST IN DATA FILE
-		return false;
+		return null;
 	}
 	public void SaveUserFile() {
 		String Combined = "";
 		String  IsTrue;
 		try {	
-			for (User Iter : this.UserLog) {
+			for (User Iter : UserLog) {
 				if(Iter.GetIT()) {
 					IsTrue = "1";
 				}
@@ -85,15 +85,24 @@ public class UserVerify {
 
 				// DEBUG PURPOSES ONLY , PRINTS OUT VECTOR
 				// System.out.print(Temp);
+			
 			}
+			sc.close();
 		}
 		catch(Exception e) {
 			// IF FILE DOES NOT EXIST
 			return;
 		}
 	}
+	public Vector<String>GetUserId(){
+		Vector<String> Temp = new Vector<String>();
+		for(User UserId : UserLog) {
+			Temp.add(UserId.GetId());
+		}
+		return Temp;
+	}
 	public Vector<User> GetVector(){
-		return this.UserLog;
+		return UserLog;
 	}
 	
 }
