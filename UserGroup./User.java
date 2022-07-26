@@ -6,7 +6,7 @@ import java.io.*;
 //  There Are IT Methods But Will Check IT_USer BOOL to determine that user can use it.
 
 
-public class User {
+public class User implements Serializable {
 	private String EmployeeName;
 	private String Id;
 	private String Pass;
@@ -18,6 +18,24 @@ public class User {
 		this.Id = null;
 		this.Pass = null;
 		this.IT_User = false;
+	}
+	public String GetName() {
+		return this.EmployeeName;
+	}
+	public String GetId() {
+		return this.Id;
+	}
+	public String GetPass() {
+		return this.Pass;
+	}
+	public Boolean GetIT() {
+		return this.IT_User;
+	}
+	public void SetID(String ID) {
+		this.Id = ID;
+	}
+	public void SetPass(String Password) {
+		this.Pass = Password;
 	}
 	
 	// Integer IT Determines Whether User Is IT Role
@@ -35,20 +53,26 @@ public class User {
 		this.Id = ID;
 		this.Pass = Password;
 		this.IT_User = Temp;
+		
+		
+		//System.out.print(" 1  - " + this);
 	}
-	public User CreateAccount_IT(String Name, String ID, String Password, Integer IT) {
+	public void CreateAccount_IT(String Name, String ID, String Password, Integer IT) {
 		// This Method Will Only Run If User Is IT
+		// NEED USERVERIFY ADD TO TXT FILE
 		if(this.IT_User) {
-			User Temp = new User(Name, ID, Password, IT);
-			return Temp;
+			User TempUser = new User(Name, ID, Password, IT);
+			UserVerify Temp  = new UserVerify();
+			Temp.LoadUserFile();
+			Temp.addUser_IT(TempUser);
 		}
 		else {
-			return null;
+			return;
 		}
 	}
 	public void CreateGroup(String GroupName) {
 		// TODO NEED GROUP CLASSES 
-		//
+		//	ADD TO GROUP TXT
 		//
 	}
 	public void SendMessage(Message Msg) {
