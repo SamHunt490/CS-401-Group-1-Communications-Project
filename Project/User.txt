@@ -1,0 +1,8 @@
+Bill,ID010,PassWord,0
+Bob,ID001,wasd,1
+Carl,ID005,1234,0
+Hank,ID006,456,0
+Yak,ID007,789,0
+Name,ID201,Password,0
+Name,ID300,Pass,0
+ExampleName,ID200,PASSWORD,0
